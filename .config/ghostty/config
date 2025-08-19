@@ -1,0 +1,4 @@
+theme = lovelace
+font-feature = -liga
+window-height = 25
+window-width = 75
