@@ -1,0 +1,15 @@
+alias ls='ls --color'
+alias la='ls -A --color'
+alias ll='ls -lAh --color'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias c="clear"
+alias gdb="gdb -q"
+alias ..="cd .."
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias mkdir='mkdir -p'
+
+md () { mkdir -p "$1" && cd "$1"; }
