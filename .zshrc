@@ -37,19 +37,23 @@ zstyle ':vcs_info:git:*' formats '%F{#585b70}(%b)%r%f'
 precmd_functions+=(vcs_info)
 
 _build_prompt() {
-    local -A ctp_mocha=(
-        green    a6e3a1
-        red      f38ba8
-        lavender b4befe
-        surface2 585b70
-        mauve    cba6f7
-    )
+  local -A ctp_mocha=(
+    green  '#a6e3a1'
+    red    '#f38ba8'
+    lavender '#b4befe'
+    surface2 '#585b70'
+    blue  '#89b4fa'
+  )
+  local exit_ok="%F{${ctp_mocha[green]}}●"
+  local exit_err="%F{${ctp_mocha[red]}}● %?"
 
-    local exit_ok="%F{#${ctp_mocha[green]}}●"
-    local exit_err="%F{#${ctp_mocha[red]}}● %?"
+  local host_segment=""
+  if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+    host_segment="%F{${ctp_mocha[blue]}}%m%f "
+  fi
 
-    PROMPT='%(?.'"$exit_ok"'.'"$exit_err"') %F{#'"${ctp_mocha[lavender]}"'}%~%f %# '
-    RPROMPT='${vcs_info_msg_0_}'
+  PROMPT='%(?.'"$exit_ok"'.'"$exit_err"') '"$host_segment"'%F{'"${ctp_mocha[lavender]}"'}%~%f %# '
+  RPROMPT='${vcs_info_msg_0_}'
 }
 _build_prompt
 
