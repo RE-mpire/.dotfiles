@@ -57,6 +57,12 @@ _build_prompt() {
 }
 _build_prompt
 
-# Completions
-autoload -Uz compinit && compinit
+# Completions (skip compaudit security check unless dump is >24h old)
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  # -C skips compaudit
+  compinit -C
+fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
