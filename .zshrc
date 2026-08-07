@@ -1,4 +1,5 @@
 export PATH="$HOME/bin:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Setup Homebrew (MacOS)
 # eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -24,6 +25,33 @@ bindkey '^D' backward-kill-word
 # zoxide and fzf integration
 # source <(fzf --zsh)
 # eval "$(zoxide init zsh --cmd cd)"
+
+
+# Prompt Setup
+autoload -Uz vcs_info
+setopt prompt_subst
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats '%F{#585b70}(%b)%r%f'
+
+precmd_functions+=(vcs_info)
+
+_build_prompt() {
+    local -A ctp_mocha=(
+        green    a6e3a1
+        red      f38ba8
+        lavender b4befe
+        surface2 585b70
+        mauve    cba6f7
+    )
+
+    local exit_ok="%F{#${ctp_mocha[green]}}●"
+    local exit_err="%F{#${ctp_mocha[red]}}● %?"
+
+    PROMPT='%(?.'"$exit_ok"'.'"$exit_err"') %F{#'"${ctp_mocha[lavender]}"'}%~%f %# '
+    RPROMPT='${vcs_info_msg_0_}'
+}
+_build_prompt
 
 # Completions
 autoload -Uz compinit && compinit
