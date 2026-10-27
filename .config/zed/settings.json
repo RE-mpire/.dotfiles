@@ -1,0 +1,79 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "tab_size": 2,
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "vim": {
+    "default_mode": "insert",
+    "toggle_relative_line_numbers": true
+  },
+  "vim_mode": true,
+  "restore_on_startup": "launchpad",
+  "ssh_connections": [
+    {
+      "host": "teach.cs.utoronto.ca",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/h/u14/c2/00/yangkyl1"
+          ]
+        }
+      ]
+    }
+  ],
+  "calls": {
+    "mute_on_join": true
+  },
+  "buffer_line_height": "comfortable",
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+    "enable_feedback": false
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 800
+    }
+  },
+  "format_on_save": "off",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha - No Italics",
+  },
+  "buffer_font_features": {
+    "calt": false
+  },
+  "wrap_guides": [80],
+  "unnecessary_code_fade": 0.3
+}
