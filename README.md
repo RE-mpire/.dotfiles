@@ -20,7 +20,7 @@ brew install git stow
 To install the dotfiles, clone the repository and run the install script, which uses GNU Stow to symlink the files into your home directory:
  
 ```
-$ git clone git@github.com:RE-mpire/.dotfiles.git
+$ git clone https://github.com/RE-mpire/.dotfiles ~/dotfiles --depth 1
 $ cd .dotfiles
 $ ./install.sh
 ```
