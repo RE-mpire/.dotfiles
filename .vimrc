@@ -31,3 +31,15 @@ set ignorecase          " Searches are case-insensitive by default
 set smartcase           " ...unless the pattern contains uppercase letters
 
 set hidden              " Allow switching buffers without saving; keeps unsaved buffers in background
+
+set backspace=indent,eol,start  " Let Backspace delete autoindent, line breaks, and text from before insert start
+set wildmenu            " Tab completion for commands (:)
+set wildmode=longest:full,full
+set ttimeout
+set ttimeoutlen=50
+set nrformats-=octal
+set splitright
+set splitbelow
+set nojoinspaces         " Use one space after punctuation when joining with J
+set autoread             " Auto reload
+set history=1000 
