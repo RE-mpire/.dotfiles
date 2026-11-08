@@ -1,7 +1,7 @@
 theme = lovelace
 font-feature = -calt
 window-height = 25
-window-width = 75
+window-width = 84
 confirm-close-surface = false
 shell-integration-features = ssh-terminfo,ssh-env
 quit-after-last-window-closed = true
